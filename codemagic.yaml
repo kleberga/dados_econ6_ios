@@ -5,8 +5,6 @@ workflows:
       groups:
         - default
     scripts:
-      - name: Verify env file
-        script: cat env
       - name: Build Flutter app
         script: flutter build ios
 
