@@ -4,7 +4,22 @@ workflows:
     environment:
       groups:
         - default
+      vars:
+        BUNDLE_ID: "com.dadoseconomicos6.app"
     scripts:
+      - name: Set up code signing
+        script: |
+          # 1. inicializa o keychain que o codemagic vai usar
+          keychain initialize
+          
+          # 2. busca os certificados e perfis da apple automaticamente
+          app-store-connect fetch-signing-files "$BUNDLE_ID" --type IOS_APP_DEVELOPMENT
+          
+          # 3. adiciona os arquivos ao keychain
+          keychain add-certificates
+          
+          # 4. configura o projeto xcode para usar os perfis baixados
+          xcode-project use-profiles
       - name: Build Flutter app
-        script: flutter build ios
+        script: flutter build ios --release
 
