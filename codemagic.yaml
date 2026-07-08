@@ -13,7 +13,7 @@ workflows:
           keychain initialize
           
           # 2. busca os certificados e perfis da apple automaticamente
-          app-store-connect fetch-signing-files "$BUNDLE_ID" --type IOS_APP_DEVELOPMENT
+          app-store-connect fetch-signing-files "$BUNDLE_ID" --type IOS_APP_DEVELOPMENT --create
           
           # 3. adiciona os arquivos ao keychain
           keychain add-certificates
