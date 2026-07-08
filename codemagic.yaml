@@ -16,7 +16,7 @@ workflows:
           keychain add-certificates
           
           # 3. faz o mapeamento automatico dos perfis subidos para o xcode
-          xcode-project use-profiles
+          xcode-project use-profiles --profile /Users/builder/library/mobiledevice/provisioning\ profiles/*.mobileprovision
       - name: Build Flutter app
         script: flutter build ios --release
 
