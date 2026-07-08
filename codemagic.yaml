@@ -8,5 +8,5 @@ workflows:
       - name: Verify env file
         script: cat env
       - name: Build Flutter app
-        script: flutter build
+        script: flutter build ios
 
