@@ -12,13 +12,10 @@ workflows:
           # 1. inicializa o keychain que o codemagic vai usar
           keychain initialize
           
-          # 2. busca os certificados e perfis da apple automaticamente
-          app-store-connect fetch-signing-files "$BUNDLE_ID" --type IOS_APP_DEVELOPMENT --create
-          
-          # 3. adiciona os arquivos ao keychain
+          # 2. adiciona os arquivos que voce subiu manualmente para o keychain
           keychain add-certificates
           
-          # 4. configura o projeto xcode para usar os perfis baixados
+          # 3. faz o mapeamento automatico dos perfis subidos para o xcode
           xcode-project use-profiles
       - name: Build Flutter app
         script: flutter build ios --release
