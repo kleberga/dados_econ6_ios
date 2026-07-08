@@ -12,11 +12,13 @@ workflows:
           # 1. inicializa o keychain que o codemagic vai usar
           keychain initialize
           
+          app-store-connect fetch-signing-files "$BUNDLE_ID" --type IOS_APP_DEVELOPMENT --create
+          
           # 2. adiciona os arquivos que voce subiu manualmente para o keychain
           keychain add-certificates
+          xcode-project use-profiles
           
       - name: Build Flutter app
         script: |
             flutter build ios --release
-            xcode-project build-ipa --workspace ios/Runner.xcworkspace --scheme Runner --archive-flags "allowProvisioningUpdates"
 
