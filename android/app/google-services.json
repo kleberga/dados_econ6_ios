@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "860456425765",
+    "project_id": "dados-eco",
+    "storage_bucket": "dados-eco.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:860456425765:android:4da09d11f0fe999aba22cc",
+        "android_client_info": {
+          "package_name": "com.dadoseconomicos6.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrqU60ew999-c7mGns6_UMLBAFt26rPWo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:860456425765:android:41d2fff43207ee57ba22cc",
+        "android_client_info": {
+          "package_name": "com.fox.apps.dados_eco"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrqU60ew999-c7mGns6_UMLBAFt26rPWo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,12 @@
+workflows:
+  default:
+    name: Default Workflow
+    environment:
+      groups:
+        - default
+    scripts:
+      - name: Verify .env file
+        script: cat .env
+      - name: Build Flutter app
+        script: flutter build
+
