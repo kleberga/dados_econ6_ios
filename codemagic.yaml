@@ -36,5 +36,5 @@ workflows:
             --workspace ios/Runner.xcworkspace \
             --scheme Runner \
             --provisioning-profile "DadosEco_Distribution" \
-            --codesign-identity "Apple Distribution
+            --codesign-identity "Apple Distribution"
             
