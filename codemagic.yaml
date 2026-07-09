@@ -7,11 +7,29 @@ workflows:
       vars:
         BUNDLE_ID: "com.dadoseconomicos6.app"
     scripts:
-      - name: Build Flutter app
+      - name: Set up code signing
         script: |
             keychain initialize
             keychain add-certificates
-            xcode-project use-profiles
+            xcode-project use-profiles --bundle-id "com.dadoseconomicos6.app"
+      - name: Build Flutter app
+        script: |
             flutter build ios --release --no-codesign
-            xcode-project build-ipa --workspace ios/Runner.xcworkspace --scheme Runner --archive-flags "-allowProvisioningUpdates -configuration Release"
+      - name: Create Export Options
+        script: |
+            cat <<EOF > /Users/builder/export_options.plist
+            <?xml version="1.0" encoding="UTF-8"?>
+            <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+            <plist version="1.0">
+            <dict>
+                <key>method</key>
+                <string>ad-hoc</string>
+                <key>teamID</key>
+                <string>8CA8RS79GA</string>
+            </dict>
+            </plist>
+            EOF
+      - name: Build ipa
+        script: |
+            xcode-project build-ipa --workspace ios/Runner.xcworkspace --scheme Runner --archive-flags "-allowProvisioningUpdates -exportOptionsPlist /Users/builder/export_options.plist"
 
