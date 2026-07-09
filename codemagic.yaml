@@ -14,6 +14,22 @@ workflows:
             xcode-project use-profiles
       - name: Build Flutter app
         script: |
-            flutter build ios --release --no-codesign
+            flutter build ios --release --no-codesign \
+              --dart-define=FIREBASE_WEB_API_KEY=$FIREBASE_WEB_API_KEY \
+              --dart-define=FIREBASE_WEB_APPID=$FIREBASE_WEB_APPID \
+              --dart-define=FIREBASE_WEB_MEASUREMENTID=$FIREBASE_WEB_MEASUREMENTID \
+              --dart-define=FIREBASE_ANDROID_API_KEY=$FIREBASE_ANDROID_API_KEY \
+              --dart-define=FIREBASE_ANDROID_APPID=$FIREBASE_ANDROID_APPID \
+              --dart-define=FIREBASE_IOS_MACOS_API_KEY=$FIREBASE_IOS_MACOS_API_KEY \
+              --dart-define=FIREBASE_IOS_MACOS_APPID=$FIREBASE_IOS_MACOS_APPID \
+              --dart-define=FIREBASE_IOS_MACOS_IOSBUNDLEID=$FIREBASE_IOS_MACOS_IOSBUNDLEID \
+              --dart-define=FIREBASE_WINDOWS_API_KEY=$FIREBASE_WINDOWS_API_KEY \
+              --dart-define=FIREBASE_WINDOWS_APPID=$FIREBASE_WINDOWS_APPID \
+              --dart-define=FIREBASE_WINDOWS_MEASUREMENTID=$FIREBASE_WINDOWS_MEASUREMENTID \
+              --dart-define=FIREBASE_MESSAGINGSENDERID=$FIREBASE_MESSAGINGSENDERID \
+              --dart-define=FIREBASE_PROJECTID=$FIREBASE_PROJECTID \
+              --dart-define=FIREBASE_AUTHDOMAIN=$FIREBASE_AUTHDOMAIN \
+              --dart-define=FIREBASE_STORAGEBUCKET=$FIREBASE_STORAGEBUCKET
+              
             xcode-project build-ipa --workspace ios/Runner.xcworkspace --scheme Runner --archive-flags "-allowProvisioningUpdates"
 

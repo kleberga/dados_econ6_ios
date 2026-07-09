@@ -6,32 +6,32 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
       return FirebaseOptions(
-        apiKey: $FIREBASE_WEB_API_KEY,
-        appId: $FIREBASE_WEB_APPID,
-        messagingSenderId: $FIREBASE_MESSAGINGSENDERID,
-        projectId: $FIREBASE_PROJECTID,
-        authDomain: $FIREBASE_AUTHDOMAIN,
-        storageBucket: $FIREBASE_STORAGEBUCKET,
-        measurementId: $FIREBASE_WEB_MEASUREMENTID,
+        apiKey: String.fromEnvironment('FIREBASE_WEB_API_KEY'),
+        appId: String.fromEnvironment('FIREBASE_WEB_APPID'),
+        messagingSenderId: String.fromEnvironment('FIREBASE_MESSAGINGSENDERID,
+        projectId: String.fromEnvironment('FIREBASE_PROJECTID,
+        authDomain: String.fromEnvironment('FIREBASE_AUTHDOMAIN,
+        storageBucket: String.fromEnvironment('FIREBASE_STORAGEBUCKET,
+        measurementId: String.fromEnvironment('FIREBASE_WEB_MEASUREMENTID,
       );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return FirebaseOptions(
-          apiKey: $FIREBASE_ANDROID_API_KEY,
-          appId: $FIREBASE_ANDROID_APPID,
-          messagingSenderId: $FIREBASE_MESSAGINGSENDERID,
-          projectId: $FIREBASE_PROJECTID,
-          storageBucket: $FIREBASE_STORAGEBUCKET,
+          apiKey: String.fromEnvironment('FIREBASE_ANDROID_API_KEY,
+          appId: String.fromEnvironment('FIREBASE_ANDROID_APPID,
+          messagingSenderId: String.fromEnvironment('FIREBASE_MESSAGINGSENDERID,
+          projectId: String.fromEnvironment('FIREBASE_PROJECTID,
+          storageBucket: String.fromEnvironment('FIREBASE_STORAGEBUCKET,
         );
       case TargetPlatform.iOS:
         return  FirebaseOptions(
-          apiKey: $FIREBASE_IOS_MACOS_API_KEY,
-          appId: $FIREBASE_IOS_MACOS_APPID,
-          messagingSenderId: $FIREBASE_MESSAGINGSENDERID,
-          projectId: $FIREBASE_PROJECTID,
-          storageBucket: $FIREBASE_STORAGEBUCKET,
-          iosBundleId: $FIREBASE_IOS_MACOS_IOSBUNDLEID
+          apiKey: String.fromEnvironment('FIREBASE_IOS_MACOS_API_KEY,
+          appId:String.fromEnvironment('FIREBASE_IOS_MACOS_APPID,
+          messagingSenderId: String.fromEnvironment('$FIREBASE_MESSAGINGSENDERID,
+          projectId: String.fromEnvironment('FIREBASE_PROJECTID,
+          storageBucket: String.fromEnvironment('FIREBASE_STORAGEBUCKET,
+          iosBundleId: String.fromEnvironment('FIREBASE_IOS_MACOS_IOSBUNDLEID
         );
       case TargetPlatform.macOS:
         return FirebaseOptions(
@@ -71,51 +71,51 @@ class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
       return FirebaseOptions(
-        apiKey: dotenv.get('FIREBASE_WEB_API_KEY'),
-        appId: dotenv.get('FIREBASE_WEB_APPID'),
-        messagingSenderId: dotenv.get('FIREBASE_MESSAGINGSENDERID'),
-        projectId: dotenv.get('FIREBASE_PROJECTID'),
-        authDomain: dotenv.get('FIREBASE_AUTHDOMAIN'),
-        storageBucket: dotenv.get('FIREBASE_STORAGEBUCKET'),
-        measurementId: dotenv.get('FIREBASE_WEB_MEASUREMENTID'),
+        apiKey: String.fromEnvironment('FIREBASE_WEB_API_KEY'),
+        appId: String.fromEnvironment('FIREBASE_WEB_APPID'),
+        messagingSenderId: String.fromEnvironment('FIREBASE_MESSAGINGSENDERID'),
+        projectId: String.fromEnvironment('FIREBASE_PROJECTID'),
+        authDomain: String.fromEnvironment('FIREBASE_AUTHDOMAIN'),
+        storageBucket: String.fromEnvironment('FIREBASE_STORAGEBUCKET'),
+        measurementId: String.fromEnvironment('FIREBASE_WEB_MEASUREMENTID'),
       );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return FirebaseOptions(
-          apiKey: dotenv.get('FIREBASE_ANDROID_API_KEY'),
-          appId: dotenv.get('FIREBASE_ANDROID_APPID'),
-          messagingSenderId: dotenv.get('FIREBASE_MESSAGINGSENDERID'),
-          projectId: dotenv.get('FIREBASE_PROJECTID'),
-          storageBucket: dotenv.get('FIREBASE_STORAGEBUCKET'),
+          apiKey: String.fromEnvironment('FIREBASE_ANDROID_API_KEY'),
+          appId: String.fromEnvironment('FIREBASE_ANDROID_APPID'),
+          messagingSenderId: String.fromEnvironment('FIREBASE_MESSAGINGSENDERID'),
+          projectId: String.fromEnvironment('FIREBASE_PROJECTID'),
+          storageBucket: String.fromEnvironment('FIREBASE_STORAGEBUCKET'),
         );
       case TargetPlatform.iOS:
         return  FirebaseOptions(
-            apiKey: dotenv.get('FIREBASE_IOS_MACOS_API_KEY'),
-            appId: dotenv.get('FIREBASE_IOS_MACOS_APPID'),
-            messagingSenderId: dotenv.get('FIREBASE_MESSAGINGSENDERID'),
-            projectId: dotenv.get('FIREBASE_PROJECTID'),
-            storageBucket: dotenv.get('FIREBASE_STORAGEBUCKET'),
-            iosBundleId: dotenv.get('FIREBASE_IOS_MACOS_IOSBUNDLEID')
+            apiKey: String.fromEnvironment('FIREBASE_IOS_MACOS_API_KEY'),
+            appId: String.fromEnvironment('FIREBASE_IOS_MACOS_APPID'),
+            messagingSenderId: String.fromEnvironment('FIREBASE_MESSAGINGSENDERID'),
+            projectId: String.fromEnvironment('FIREBASE_PROJECTID'),
+            storageBucket: String.fromEnvironment('FIREBASE_STORAGEBUCKET'),
+            iosBundleId: String.fromEnvironment('FIREBASE_IOS_MACOS_IOSBUNDLEID')
         );
       case TargetPlatform.macOS:
         return FirebaseOptions(
-            apiKey: dotenv.get('FIREBASE_IOS_MACOS_API_KEY'),
-            appId: dotenv.get('FIREBASE_IOS_MACOS_APPID'),
-            messagingSenderId: dotenv.get('FIREBASE_MESSAGINGSENDERID'),
-            projectId: dotenv.get('FIREBASE_PROJECTID'),
-            storageBucket: dotenv.get('FIREBASE_STORAGEBUCKET'),
-            iosBundleId: dotenv.get('FIREBASE_IOS_MACOS_IOSBUNDLEID')
+            apiKey: String.fromEnvironment('FIREBASE_IOS_MACOS_API_KEY'),
+            appId: String.fromEnvironment('FIREBASE_IOS_MACOS_APPID'),
+            messagingSenderId: String.fromEnvironment('FIREBASE_MESSAGINGSENDERID'),
+            projectId: String.fromEnvironment('FIREBASE_PROJECTID'),
+            storageBucket: String.fromEnvironment('FIREBASE_STORAGEBUCKET'),
+            iosBundleId: String.fromEnvironment('FIREBASE_IOS_MACOS_IOSBUNDLEID')
         );
       case TargetPlatform.windows:
         return FirebaseOptions(
-          apiKey: dotenv.get('FIREBASE_WINDOWS_API_KEY'),
-          appId: dotenv.get('FIREBASE_WINDOWS_APPID'),
-          messagingSenderId: dotenv.get('FIREBASE_MESSAGINGSENDERID'),
-          projectId: dotenv.get('FIREBASE_PROJECTID'),
-          authDomain: dotenv.get('FIREBASE_AUTHDOMAIN'),
-          storageBucket: dotenv.get('FIREBASE_STORAGEBUCKET'),
-          measurementId: dotenv.get('FIREBASE_WINDOWS_MEASUREMENTID'),
+          apiKey: String.fromEnvironment('FIREBASE_WINDOWS_API_KEY'),
+          appId: String.fromEnvironment('FIREBASE_WINDOWS_APPID'),
+          messagingSenderId: String.fromEnvironment('FIREBASE_MESSAGINGSENDERID'),
+          projectId: String.fromEnvironment('FIREBASE_PROJECTID'),
+          authDomain: String.fromEnvironment('FIREBASE_AUTHDOMAIN'),
+          storageBucket: String.fromEnvironment('FIREBASE_STORAGEBUCKET'),
+          measurementId: String.fromEnvironment('FIREBASE_WINDOWS_MEASUREMENTID'),
         );
       case TargetPlatform.linux:
         throw UnsupportedError(
