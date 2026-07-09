@@ -14,7 +14,7 @@ workflows:
             xcode-project use-profiles
       - name: Build Flutter app
         script: |
-            flutter build ios --release \
+            flutter build ios --release --no-codesign \
               --dart-define=FIREBASE_WEB_API_KEY=$FIREBASE_WEB_API_KEY \
               --dart-define=FIREBASE_WEB_APPID=$FIREBASE_WEB_APPID \
               --dart-define=FIREBASE_WEB_MEASUREMENTID=$FIREBASE_WEB_MEASUREMENTID \
