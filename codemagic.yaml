@@ -9,6 +9,9 @@ workflows:
     scripts:
       - name: Build Flutter app
         script: |
+            keychain initialize
+            keychain add-certificates
+            xcode-project use-profiles
             flutter build ios --release
             xcode-project build-ipa --workspace ios/Runner.xcworkspace --scheme Runner --archive-flags "-allowProvisioningUpdates
 
