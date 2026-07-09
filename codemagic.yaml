@@ -38,4 +38,6 @@ workflows:
             xcode-project build-ipa \
             --workspace ios/Runner.xcworkspace \
             --scheme Runner
-            
+    artifacts:
+        - build/ios/ipa/*.ipa
+        - /tmp/xcodebuild_logs/*.log
