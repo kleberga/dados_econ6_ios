@@ -34,7 +34,5 @@ workflows:
         script: |
             xcode-project build-ipa \
             --workspace ios/Runner.xcworkspace \
-            --scheme Runner \
-            --provisioning-profile "DadosEco_Distribution" \
-            --codesign-identity "Apple Distribution"
+            --scheme Runner
             
