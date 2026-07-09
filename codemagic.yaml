@@ -12,6 +12,6 @@ workflows:
             keychain initialize
             keychain add-certificates
             xcode-project use-profiles
-            flutter build ios --release
-            xcode-project build-ipa --workspace ios/Runner.xcworkspace --scheme Runner --archive-flags "-allowProvisioningUpdates"
+            flutter build ios --release --no-codesign
+            xcode-project build-ipa --workspace ios/Runner.xcworkspace --scheme Runner --archive-flags "-allowProvisioningUpdates -configuration Release"
 
