@@ -30,7 +30,7 @@ workflows:
               --dart-define=FIREBASE_PROJECTID=$FIREBASE_PROJECTID \
               --dart-define=FIREBASE_AUTHDOMAIN=$FIREBASE_AUTHDOMAIN \
               --dart-define=FIREBASE_STORAGEBUCKET=$FIREBASE_STORAGEBUCKET
-        - name: Build ipa
-          script: |
-              xcode-project build-ipa --workspace ios/Runner.xcworkspace --scheme Runner --archive-flags "-allowProvisioningUpdates"
+      - name: Build IPA
+        script: |
+            xcode-project build-ipa --workspace ios/Runner.xcworkspace --scheme Runner --archive-flags "-allowProvisioningUpdates"
 
