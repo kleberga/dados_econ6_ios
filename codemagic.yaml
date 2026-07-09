@@ -14,7 +14,7 @@ workflows:
             xcode-project use-profiles
       - name: Build Flutter app
         script: |
-            flutter build ios --release --no-codesign \
+            flutter build ios --release \
               --dart-define=FIREBASE_WEB_API_KEY=$FIREBASE_WEB_API_KEY \
               --dart-define=FIREBASE_WEB_APPID=$FIREBASE_WEB_APPID \
               --dart-define=FIREBASE_WEB_MEASUREMENTID=$FIREBASE_WEB_MEASUREMENTID \
@@ -35,3 +35,4 @@ workflows:
             xcode-project build-ipa \
             --workspace ios/Runner.xcworkspace \
             --scheme Runner
+            
