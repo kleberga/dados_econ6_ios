@@ -145,7 +145,7 @@ flutter:
     - images/dadoseco8.png
     - images/dadoseco10.png
   #  - assets/images/icone_economico_alterado4.png
-    - env
+  #  - env
     - lib/database/assunto.json.gz
     - lib/database/indice_precos.json.gz
     - lib/database/setor_real.json.gz
