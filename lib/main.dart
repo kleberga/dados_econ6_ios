@@ -5,7 +5,6 @@ import 'screens/home.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'infra/firebase_options.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 List<cadastroSeries> listaIBGE = [];
@@ -24,10 +23,21 @@ Future<void> main() async {
   // the application's lifecycle, handling input gestures, and triggering the build
   // and layout of widgets.
   WidgetsFlutterBinding.ensureInitialized();
-  MobileAds.instance.initialize();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  try {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+    debugPrint('Firebase OK');
+  } catch (e, stack) {
+    debugPrint('ERRO Firebase: $e\n$stack');
+  }
+
+  try {
+    await MobileAds.instance.initialize();
+    debugPrint('MobileAds OK');
+  } catch (e, stack) {
+    debugPrint('ERRO MobileAds: $e\n$stack');
+  }
 
   runApp(
       ProviderScope(
