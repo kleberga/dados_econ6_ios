@@ -18,7 +18,7 @@ var listajaCombinada;
 final providerContainer = ProviderContainer();
 
 Future<void> main() async {
-  await dotenv.load(fileName: "env");
+
   // inicializar uma instancia de WidgetsFlutterBinding. In the Flutter framework,
   // the WidgetsFlutterBinding class plays a crucial role. It is responsible for
   // the application's lifecycle, handling input gestures, and triggering the build
